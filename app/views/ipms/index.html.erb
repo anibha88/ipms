@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ipms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organisation</th>
+      <th>City</th>
+      <th>Office</th>
+      <th>Building</th>
+      <th>Floor</th>
+      <th>Building type</th>
+      <th>Component</th>
+      <th>IPMS</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ipms.each do |ipm| %>
+      <tr>
+        <td><%= ipm.organisation %></td>
+        <td><%= ipm.city %></td>
+        <td><%= ipm.office %></td>
+        <td><%= ipm.building %></td>
+        <td><%= ipm.floor %></td>
+        <td><%= ipm.building_type %></td>
+        <td><%= ipm.component %></td>
+        <td><%= ipm.ipm_type %></td>
+        <td><%= link_to 'Show', ipm %></td>
+        <td><%= link_to 'Edit', edit_ipm_path(ipm) %></td>
+        <td><%= link_to 'Destroy', ipm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ipm', new_ipm_path %>

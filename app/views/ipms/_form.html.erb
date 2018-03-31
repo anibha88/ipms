@@ -1,0 +1,52 @@
+<%= form_with(model: ipm, local: true) do |form| %>
+  <% if ipm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ipm.errors.count, "error") %> prohibited this ipm from being saved:</h2>
+
+      <ul>
+      <% ipm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :organisation %>
+    <%= form.text_field :organisation, id: :ipm_organisation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :ipm_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :office %>
+    <%= form.text_field :office, id: :ipm_office %>
+  </div>
+
+  <div class="field">
+    <%= form.label :building %>
+    <%= form.text_field :building, id: :ipm_building %>
+  </div>
+
+  <div class="field">
+    <%= form.label :floor %>
+    <%= form.number_field :floor, id: :ipm_floor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :building_type %>
+    <%= form.text_field :building_type, id: :ipm_building_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :component %>
+    <%= form.text_field :component, id: :ipm_component %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

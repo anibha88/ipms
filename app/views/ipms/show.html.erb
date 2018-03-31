@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @ipm.organisation %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @ipm.city %>
+</p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @ipm.office %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @ipm.building %>
+</p>
+
+<p>
+  <strong>Floor:</strong>
+  <%= @ipm.floor %>
+</p>
+
+<p>
+  <strong>Building type:</strong>
+  <%= @ipm.building_type %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @ipm.component %>
+</p>
+
+<%= link_to 'Edit', edit_ipm_path(@ipm) %> |
+<%= link_to 'Back', ipms_path %>
