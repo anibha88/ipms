@@ -1,2 +1,26 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= form_with url: root_path, method: :get, remote: true do |f| %>
+
+  <%= f.label :city, "Select a city" %>
+  <%= f.select :city, ['Bangalore', 'Mysuru', 'Chennai']%>
+
+  <%= f.label :office, "Select office" %>
+  <%= f.select :office, ['Wipro Corporate Off, Sarjapur', 'Wipro Tech Ltd, EC1', 'Wipro Tech Ltd, EC2', 'Wipro Tech Ltd, EC3', 'Wipro Tech, Madiwala', 'Wipro Tech, ORR']%>
+
+  <%= f.label :building, "Select Building" %>
+  <%= f.select :building, ['Wipro Corporate Off, Level-B2','Wipro Corporate Off, Level-B1', 'Wipro Corporate Off, Level-0', 'Wipro Corporate Off, Level-1', 'Wipro Corporate Off, Level-2', 'Wipro Corporate Off, Level-3']%>
+
+  <%= f.submit %>
+<% end %>
+
+
+<% if @results.present? %>
+	<p> Success </p>
+<% else %>
+    <p> Failure </p>
+<% end %>
+
+
