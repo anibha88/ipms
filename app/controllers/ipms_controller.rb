@@ -69,6 +69,6 @@ class IpmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ipm_params
-      params.require(:ipm).permit(:organisation, :city, :office, :building, :floor, :building_type, :component)
+      params.require(:ipm).permit(:organisation, :city, :office, :building, :floor, :building_type, :component, :area, :ipm_type)
     end
 end

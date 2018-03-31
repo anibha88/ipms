@@ -36,6 +36,11 @@
     <%= form.number_field :floor, id: :ipm_floor %>
   </div>
 
+   <div class="field">
+    <%= form.label :area %>
+    <%= form.number_field :area, id: :area, step: :any %>
+  </div>
+
   <div class="field">
     <%= form.label :building_type %>
     <%= form.text_field :building_type, id: :ipm_building_type %>
