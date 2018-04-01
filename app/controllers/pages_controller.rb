@@ -1,17 +1,9 @@
 class PagesController < ApplicationController
+ 
+  
+
   def home
-  	if params[:city].present?
-  		city = params[:city]
-	  	office = params[:office]
-	  	building = params[:building]
-	  	building = building.split(",").first rescue nil
-	  	floor = 1
-	  	@results = Ipm.where(organisation: "Wipro", city: city, office: office, building: building, floor: 1)
-	  	# render json: @results
-	  	
-	  	render_to_string @results # pages_result_path(:results => @results)
-	  	return
-	end
+  	
   end
 
   def about
@@ -23,15 +15,22 @@ class PagesController < ApplicationController
   
 
   def result
-	# city = params[:city]
- #  	office = params[:office]
- #  	building = params[:building]
- #  	building = building.split(",").first rescue nil
- #  	floor = 1
- #  	@results = Ipm.where(organisation: "Wipro", city: city, office: office, building: building, floor: 1)
-  	
+  	if params[:city]
+	  	city = params[:city]
+	  	office = params[:office]
+	  	building = params[:building]
+	  	Result.get_results(city, office, building)
+	end
+	render :file => 'results/index.html.erb'
   end
 
+  private
+
+  def pages_params
+  	params.require(:pages).permit(:city, :office, :building)
+  end
+
+ 
   
 
   

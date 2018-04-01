@@ -14,3 +14,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+    $.ajax({
+       success: function(data) {
+           window.location = data.location
+       }
+    })
+});

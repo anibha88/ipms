@@ -1,8 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<%= form_with url: root_path, method: :get, remote: true do |f| %>
+<%= form_with url: pages_result_path, method: :get do |f| %>
 
   <%= f.label :city, "Select a city" %>
   <%= f.select :city, ['Bangalore', 'Mysuru', 'Chennai']%>
@@ -15,12 +11,3 @@
 
   <%= f.submit %>
 <% end %>
-
-
-<% if @results.present? %>
-	<p> Success </p>
-<% else %>
-    <p> Failure </p>
-<% end %>
-
-

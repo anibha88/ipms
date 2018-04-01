@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>IPMS</th>
+      <th>Comp</th>
+      <th>Area</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% unless @results.nil? %>
+      <% @results.each do |res| %>
+        <tr>
+          <td><%= res.ipms %></td>
+          <td><%= res.comp %></td>
+          <td><%= res.area %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331122017) do
+ActiveRecord::Schema.define(version: 20180401090817) do
 
   create_table "ipms", force: :cascade do |t|
     t.string "organisation"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20180331122017) do
     t.datetime "updated_at", null: false
     t.string "ipm_type"
     t.string "area"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string "ipms"
+    t.string "comp"
+    t.string "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
